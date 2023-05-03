@@ -17,7 +17,7 @@ from git import Repo
 def call_openai(diff:str) -> List[str]:
     openai.api_key = os.getenv("OPENAI_API_KEY")
 
-    """response = openai.Completion.create(
+    response = openai.Completion.create(
     model="text-davinci-003",
     prompt=f"Suggest a commit message for my changes\n\n {diff} \n",
     temperature=0.7,
@@ -29,8 +29,8 @@ def call_openai(diff:str) -> List[str]:
     n=3
     )
     print(response['choices'])
-    return [c['text'] for c in response['choices']]"""
-    return ["Add main.py file with os.popen method for git diff"," Add main.py file with git diff command","Add main.py file to project"]
+    return [c['text'] for c in response['choices']]
+   #return ["Add main.py file with os.popen method for git diff"," Add main.py file with git diff command","Add main.py file to project"]
 
 commit_opts = []
 with console.status("Working..."):
